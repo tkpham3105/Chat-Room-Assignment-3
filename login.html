@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Login Page</title>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <script type="text/javascript">
+        //<![CDATA[
+            function clearMessage() {
+                try {
+                    var name = window.parent.frames["message"].document.getElementById("username");
+                    if (name != "") {
+                        window.parent.frames["message"].location.reload();
+                    }
+                } 
+                catch (e) { }
+            }
+        
+            //username input checking
+            function checkInput() {
+                var nameInput = document.forms[0]["name"].value;
+               
+                // username cannot be empty
+                if (nameInput.length == 0) {
+                    alert("Please enter a name!");
+                    return false;
+                }
+               
+                // username cannot contain illegal character
+                var regex = /^[a-z0-9]{3,10}/i;
+                if (!regex.test(nameInput)) {
+                    alert("Your username must contain 3 to 10 characters including only letters (a-z A-Z), numbers(0,9), underscores(_) with no space. Please enter again !");
+                    return false;
+                }
+
+                // user has to upload a picture
+                var upload = document.forms[0]["pic-upload"].value;
+                console.log(upload);
+                if (upload == "") {
+                    alert("Your photo is missing ! Please upload a photo!");
+                        return false;
+                }
+
+                // user has to upload picture format only
+                var extension = upload.substring(upload.lastIndexOf('.') + 1).toUpperCase();
+                if (!(extension == "GIF" || extension == "PNG" || extension == "BMP" || extension == "JPG" || extension == "JPEG")) {
+                    alert("You can only upload pictures with format PNG, BMP, JPG/JPEG or GIF! Please upload again !");
+                    return false;
+                }
+           
+                return true;
+            }
+        </script>
+    </head>
+
+    <body onload="clearMessage()">
+        <form method="post" action="login.php" onsubmit="javascript: return checkInput()" enctype="multipart/form-data">
+            <table border="0" cellpadding="5" cellspacing="0">
+                <tr>
+                    <td>Please enter your username:</td>
+                    <td><input class="text" name="name" id="name" type="text" size="20" maxlength="10" /></td>
+                </tr>
+                <tr>
+                    <td align="left">Please upload a picture:</td>
+                    <td>
+                      <div class="picture">
+                        <span id="filename">Select your file</span>
+                        <label for="pic-upload">Browse<input type="file" name="pic-upload" id="pic-upload"></label>
+                      </div>
+                    </td>
+                </tr>
+                <tr align="center">
+                    <td colspan="2"><input class="button" type="submit" value="Go!" style="width: 150px" /></td>
+                </tr>
+            </table>
+        </form>
+        <script>
+            document.getElementById("pic-upload").onchange =
+            function() {
+                var filepath = this.value;
+                var m = filepath.match(/([^\/\\]+)$/);
+                var filename = m[1];
+                document.getElementById("filename").textContent = filename;
+            };
+        </script>
+    </body>
+</html>

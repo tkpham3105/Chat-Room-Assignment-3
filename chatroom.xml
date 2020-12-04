@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<chatroom>
+  <users><user name="tkpham" pic-upload="images/mom.png"/><user name="PHAM TRUNG" pic-upload="images/mom.png"/></users>
+  <messages><message name="tkpham" textcolor="yellow">Hello I'm Kyle</message><message name="PHAM TRUNG" textcolor="red">Dammit</message><message name="tkpham" textcolor="blue">Hello I'm back</message><message name="haha" textcolor="orange">Bullshit</message><message name="haha" textcolor="white">__EMPTY__</message></messages>
+</chatroom>

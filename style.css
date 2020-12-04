@@ -1,0 +1,237 @@
+body {
+    font-family: Trebuchet MS, sans-serif;
+    font-weight: bold;
+    margin: 0px;
+    padding: 5px;
+    background: #ab3fdd;
+    width: 800px;
+    text-align: center;
+    color:white;
+}
+
+a {
+    display: inline-block;
+    position: relative;
+    padding-left: 3px;
+    text-decoration: underline;
+    color: #13b4ff;
+    text-shadow: 0 1px 1px rgba(128,128,128,1);
+}
+
+a:hover {
+    color: #e5ccff;
+}
+
+a:before {
+    content: "\25BA";
+    font-size: 80%;
+    display: inline-block;
+    padding-right: 2px;
+    pointer-events: none;
+}
+
+a:visited {
+    color: #e5ccff;
+}
+
+a:hover:before {
+     color: #e5ccff;
+}
+
+
+h1{
+    position: relative;
+    left: -170px;
+}
+
+img {
+    border-radius: 50%;
+    border: 5px solid #BADA55;
+}
+
+form {
+    margin: 0px;
+    padding: 0px;
+}
+
+input.text {
+    font-family: Trebuchet MS, sans-serif;
+    font-size: 12pt;
+    border: 1px solid white;
+    background: white;
+}
+
+input.button {
+    font-family: Trebuchet MS, sans-serif;
+    font-size: 12pt;
+    border: 3px solid white;
+    color:white;
+    background: black;
+}
+
+input.button:hover, input.button:active {
+    color:black;
+    background: white;
+}
+
+input.button.onlinelist {
+    font-family: Trebuchet MS, sans-serif;
+    font-size: 12pt;
+    border: 3px solid white;
+    color:white;
+    background: #0080ff;
+}
+
+input.button.onlinelist:hover, input.button.onlinelist:active {
+    color: black;
+    background: #66b2ff;;
+}
+
+input.button.logout {
+    font-family: Trebuchet MS, sans-serif;
+    font-size: 12pt;
+    border: 3px solid white;
+    color:white;
+    background: #ff3333;
+}
+
+input.button.logout:hover, input.button.logout:active {
+    color: black;
+    background: #ff9999;;
+}
+
+label[for="pic-upload"]{
+  position: relative;
+  left: 5px;
+  display:inline-block;
+  padding:0.25em;  
+  background-color:white;
+  color: black;
+  cursor:pointer;
+}
+
+label[for="pic-upload"]:hover{
+  background-color:grey;
+}
+
+.oneEntry {
+    margin: 5px;
+}
+
+.nameEntry{
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.msgEntry{
+    display: inline-block;
+}
+
+.oneUserList {
+    position:relative;
+    top: 30px;
+    height: 100px;
+    margin-bottom: 30px;
+}
+
+.picEntry{
+    display:block;
+    position:relative;
+    left: 150px;
+    width: 100px;
+    height: 100px;
+    float:left;
+    border-radius:100%;
+    margin-bottom: 10px;
+}
+
+.onlineNameEntry{
+    display: block;
+    position:relative;
+    top: 45px;
+    left: -150px;
+}
+
+.picture {
+    position: relative;
+    top:-5px;
+    left:45px;
+}
+
+#pic-upload {
+    position: absolute;
+    left: -9999px;
+}
+
+#filename{
+  padding:0.2em;
+  float:left;
+  width:200px;
+  white-space: nowrap;
+  overflow:auto;
+  background-color:white;
+  border:1px solid white;
+  text-align: left;
+  color:black;
+}
+
+.colorChooser {
+    width: 500px;
+    height:50px;
+    position: absolute;
+    left : 240px;
+    top: 48px;
+
+}
+
+.colorBoxes {
+    position: relative;
+    left: 150px;
+    top: -35px;
+}
+
+.colorBox {
+    width: 20px;
+    height: 20px;
+    float:left;
+    margin: 0px 5px 5px 0px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: white;
+    cursor: pointer;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.colorBox:after {
+    z-index: -1;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.colorBox-style {
+    background: #cb4e4e;
+    color: #fff;
+    box-shadow: 0 6px #ab3c3c;
+    -webkit-transition: none;
+    -moz-transition: none;
+    transition: none;
+}
+
+.colorBox-effect {
+    border-radius: 3px;
+    box-shadow: 3px 3px #999999;
+}
+
+.colorBox-effect:hover {
+    box-shadow: 2px 2px #999999;
+    left: 2px;
+}
+
+.colorBox-effect:active {
+    box-shadow: 0 0 #999999;
+    border-color: rgb(255,255,255);
+    border-width: 2px;
+}
